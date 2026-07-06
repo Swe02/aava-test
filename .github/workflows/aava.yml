@@ -1,0 +1,25 @@
+name: Test AAVA Action
+ 
+on:
+  workflow_dispatch:
+ 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+ 
+      - name: Run AAVA Action
+        uses: Swe02/aava-github-action@main
+ 
+        with:
+          workflow-id: "99999"
+          realm-id: "180"
+          inputs: |
+            {
+              "brd":"Testing "
+            }
+ 
+          token: ${{ secrets.AAVA_TOKEN }}
