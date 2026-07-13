@@ -6,16 +6,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
  
       - name: Run AAVA Action
-        uses: Swe/aava-github-action@main
+        uses: Swe02/aava-github-action@main
  
         with:
-          workflow-id: "13368"
+          workflow-id: "10883"
           inputs: |
             {
               "brd":" "
