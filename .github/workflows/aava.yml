@@ -15,10 +15,10 @@ jobs:
         uses: Swe02/aava-github-action@main
  
         with:
-          workflow-id: " "
+          workflow-id: "13368"
           inputs: |
             {
-              "brd":"Testing "
+              "brd":" "
             }
  
           token: ${{ secrets.AAVA_TOKEN }}
