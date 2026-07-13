@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
  
-      - name: Run AAVA Action
+      - name: Run AAVA 
         uses: Swe02/aava-github-action@main
  
         with:
