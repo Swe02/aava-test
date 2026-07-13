@@ -1,26 +1,32 @@
 name: Test AAVA Action
- 
+
 on:
   workflow_dispatch:
- 
+
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 1
- 
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
- 
+
       - name: Run AAVA Action
+        id: aava
         uses: Swe02/aava-github-action@main
- 
         with:
           workflow-id: "10883"
           inputs: |
             {
               "brd":" "
             }
- 
           token: ${{ secrets.AAVA_TOKEN }}
           base-url: "https://aava-qe.aava.ai"
+
+      - name: Print AAVA Outputs
+        run: |
+          echo "Run ID: ${{ steps.aava.outputs.run-id }}"
+          echo "Status: ${{ steps.aava.outputs.status }}"
+          echo "Result:"
+          echo '${{ steps.aava.outputs.result }}'
